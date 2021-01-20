@@ -24,15 +24,12 @@ exports.userSigninValidator = [
 
 exports.forgotPasswordValidator = [
     check('email')
-        .not()
-        .isEmpty()
         .isEmail()
         .withMessage('Must be a valid email address')
 ];
 
 exports.resetPasswordValidator = [
     check('newPassword')
-        .isEmpty()
         .isLength({min:6})
         .withMessage('PassWord Must be atleast 6 characters'),
 ];
